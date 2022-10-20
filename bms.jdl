@@ -1,0 +1,40 @@
+// 图书管理系统
+application {
+  config {
+    baseName bms
+    applicationType monolith
+    packageName com.cr.bms
+    cacheProvider redis
+  }
+  entities *
+}
+/**
+ * 图书
+ */
+entity Book {
+  /** 书名 */
+  name String required
+
+  /** 作者 */
+  author String required
+
+  /** 出版社 */
+  publisher String required
+
+  /** 版次 */
+  publishVerion String required
+
+  /** 价格 */
+  price BigDecimal required
+
+  /** 商品编码 */
+  isbn String required
+
+  /** 备注 */
+  remark String
+}
+// Set pagination options
+paginate * with pagination
+// Set service options to all except few
+service all with serviceImpl
+filter *

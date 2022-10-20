@@ -1,0 +1,58 @@
+{
+  "name": "Book",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "javadoc": "书名",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "author",
+      "fieldType": "String",
+      "javadoc": "作者",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "publisher",
+      "fieldType": "String",
+      "javadoc": "出版社",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "publishVerion",
+      "fieldType": "String",
+      "javadoc": "版次",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "price",
+      "fieldType": "BigDecimal",
+      "javadoc": "价格",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "isbn",
+      "fieldType": "String",
+      "javadoc": "商品编码",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "remark",
+      "fieldType": "String",
+      "javadoc": "备注"
+    }
+  ],
+  "relationships": [],
+  "javadoc": "图书",
+  "entityTableName": "book",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["bms"],
+  "changelogDate": "20221020021241"
+}

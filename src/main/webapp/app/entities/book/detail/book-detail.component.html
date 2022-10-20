@@ -1,0 +1,58 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="book">
+      <h2 data-cy="bookDetailsHeading"><span jhiTranslate="bmsApp.book.detail.title">Book</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ book.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="bmsApp.book.name" [ngbTooltip]="'bmsApp.book.help.name' | translate">Name</span></dt>
+        <dd>
+          <span>{{ book.name }}</span>
+        </dd>
+        <dt><span jhiTranslate="bmsApp.book.author" [ngbTooltip]="'bmsApp.book.help.author' | translate">Author</span></dt>
+        <dd>
+          <span>{{ book.author }}</span>
+        </dd>
+        <dt><span jhiTranslate="bmsApp.book.publisher" [ngbTooltip]="'bmsApp.book.help.publisher' | translate">Publisher</span></dt>
+        <dd>
+          <span>{{ book.publisher }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="bmsApp.book.publishVerion" [ngbTooltip]="'bmsApp.book.help.publishVerion' | translate">Publish Verion</span>
+        </dt>
+        <dd>
+          <span>{{ book.publishVerion }}</span>
+        </dd>
+        <dt><span jhiTranslate="bmsApp.book.price" [ngbTooltip]="'bmsApp.book.help.price' | translate">Price</span></dt>
+        <dd>
+          <span>{{ book.price }}</span>
+        </dd>
+        <dt><span jhiTranslate="bmsApp.book.isbn" [ngbTooltip]="'bmsApp.book.help.isbn' | translate">Isbn</span></dt>
+        <dd>
+          <span>{{ book.isbn }}</span>
+        </dd>
+        <dt><span jhiTranslate="bmsApp.book.remark" [ngbTooltip]="'bmsApp.book.help.remark' | translate">Remark</span></dt>
+        <dd>
+          <span>{{ book.remark }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/book', book.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

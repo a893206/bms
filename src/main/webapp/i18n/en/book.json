@@ -1,0 +1,39 @@
+{
+  "bmsApp": {
+    "book": {
+      "home": {
+        "title": "Books",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Book",
+        "createOrEditLabel": "Create or edit a Book",
+        "notFound": "No Books found"
+      },
+      "created": "A new Book is created with identifier {{ param }}",
+      "updated": "A Book is updated with identifier {{ param }}",
+      "deleted": "A Book is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Book {{ id }}?"
+      },
+      "detail": {
+        "title": "Book"
+      },
+      "id": "ID",
+      "name": "Name",
+      "author": "Author",
+      "publisher": "Publisher",
+      "publishVerion": "Publish Verion",
+      "price": "Price",
+      "isbn": "Isbn",
+      "remark": "Remark",
+      "help": {
+        "name": "书名",
+        "author": "作者",
+        "publisher": "出版社",
+        "publishVerion": "版次",
+        "price": "价格",
+        "isbn": "商品编码",
+        "remark": "备注"
+      }
+    }
+  }
+}

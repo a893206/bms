@@ -1,0 +1,163 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-book-heading" data-cy="BookCreateUpdateHeading" jhiTranslate="bmsApp.book.home.createOrEditLabel">
+        Create or edit a Book
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label
+            class="form-control-label"
+            jhiTranslate="bmsApp.book.name"
+            for="field_name"
+            [ngbTooltip]="'bmsApp.book.help.name' | translate"
+            >Name</label
+          >
+          <input type="text" class="form-control" name="name" id="field_name" data-cy="name" formControlName="name" />
+          <div *ngIf="editForm.get('name')!.invalid && (editForm.get('name')!.dirty || editForm.get('name')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('name')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label
+            class="form-control-label"
+            jhiTranslate="bmsApp.book.author"
+            for="field_author"
+            [ngbTooltip]="'bmsApp.book.help.author' | translate"
+            >Author</label
+          >
+          <input type="text" class="form-control" name="author" id="field_author" data-cy="author" formControlName="author" />
+          <div *ngIf="editForm.get('author')!.invalid && (editForm.get('author')!.dirty || editForm.get('author')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('author')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label
+            class="form-control-label"
+            jhiTranslate="bmsApp.book.publisher"
+            for="field_publisher"
+            [ngbTooltip]="'bmsApp.book.help.publisher' | translate"
+            >Publisher</label
+          >
+          <input type="text" class="form-control" name="publisher" id="field_publisher" data-cy="publisher" formControlName="publisher" />
+          <div *ngIf="editForm.get('publisher')!.invalid && (editForm.get('publisher')!.dirty || editForm.get('publisher')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('publisher')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label
+            class="form-control-label"
+            jhiTranslate="bmsApp.book.publishVerion"
+            for="field_publishVerion"
+            [ngbTooltip]="'bmsApp.book.help.publishVerion' | translate"
+            >Publish Verion</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="publishVerion"
+            id="field_publishVerion"
+            data-cy="publishVerion"
+            formControlName="publishVerion"
+          />
+          <div
+            *ngIf="
+              editForm.get('publishVerion')!.invalid && (editForm.get('publishVerion')!.dirty || editForm.get('publishVerion')!.touched)
+            "
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('publishVerion')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label
+            class="form-control-label"
+            jhiTranslate="bmsApp.book.price"
+            for="field_price"
+            [ngbTooltip]="'bmsApp.book.help.price' | translate"
+            >Price</label
+          >
+          <input type="number" class="form-control" name="price" id="field_price" data-cy="price" formControlName="price" />
+          <div *ngIf="editForm.get('price')!.invalid && (editForm.get('price')!.dirty || editForm.get('price')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('price')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+            <small class="form-text text-danger" [hidden]="!editForm.get('price')?.errors?.number" jhiTranslate="entity.validation.number">
+              This field should be a number.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label
+            class="form-control-label"
+            jhiTranslate="bmsApp.book.isbn"
+            for="field_isbn"
+            [ngbTooltip]="'bmsApp.book.help.isbn' | translate"
+            >Isbn</label
+          >
+          <input type="text" class="form-control" name="isbn" id="field_isbn" data-cy="isbn" formControlName="isbn" />
+          <div *ngIf="editForm.get('isbn')!.invalid && (editForm.get('isbn')!.dirty || editForm.get('isbn')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('isbn')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label
+            class="form-control-label"
+            jhiTranslate="bmsApp.book.remark"
+            for="field_remark"
+            [ngbTooltip]="'bmsApp.book.help.remark' | translate"
+            >Remark</label
+          >
+          <input type="text" class="form-control" name="remark" id="field_remark" data-cy="remark" formControlName="remark" />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
